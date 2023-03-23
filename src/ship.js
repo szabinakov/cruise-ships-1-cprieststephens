@@ -14,7 +14,11 @@ Ship.prototype.dock = function(port) {
     this.currentPort = port;
 };
 
-module.exports = { Ship, Port }
+function Itinerary(ports) {
+    this.ports = ports;
+};
+
+module.exports = { Ship, Port, Itinerary }
 
 
 
