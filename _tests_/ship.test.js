@@ -6,19 +6,29 @@ describe("Ship", () => {
   });
 
   it("sets Port object as current port", () => {
-    const port = new Port("London");
-    const ship = new Ship(port);
-    expect(ship.currentPort).toEqual(port);
+    const london = new Port("London");
+    const ship = new Ship(london);
+    expect(ship.currentPort).toBe(london);
   });
 
 });
 
 describe("setSail", () => {
-  it("can set sail", () => {
-    const port = new Port("London");
-    const ship = new Ship(port);
+  it("allows Ship to set sail", () => {
+    const london = new Port("London");
+    const ship = new Ship(london);
     ship.setSail();
     expect(ship.currentPort).toBeFalsy();
+  });
+});
+
+describe("dock", () => {
+  it("allows Ship to dock at different port", () => {
+    const london = new Port("London");
+    const liverpool = new Port("Liverpool");
+    const ship = new Ship(london);
+    ship.dock(liverpool);
+    expect(ship.currentPort).toBe(liverpool);
   });
 });
 
