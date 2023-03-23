@@ -8,22 +8,22 @@ Features:
 
 ## Getting started
 
-# Clone this repository
+### Clone this repository
 
 - Create a fork of this repo.
 - Clone your copy of the repo using the command: `git clone git@github.com:*your-github-username*/*repo-name*.git`
 
-# Install the project dependencies
+### Install the project dependencies
 
 Use the command `npm install` to download the project's dependencies and create a node_modules folder.
 
-# Running the tests
+### Running the tests
 
 Use the command `npm test` to run the Jest tests for this project.
 
-# How to play
+### How to play
 
-TBC
+TBC (project still in progress)
 
 Author: Camilla Priest-Stephens with guidance from Command Shift.
 
