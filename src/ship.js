@@ -14,14 +14,28 @@ Ship.prototype.setSail = function() {
     this.currentPort = null;
 };
 
-function Port(name) {
-    this.name = name;
-};
-
 Ship.prototype.dock = function() {
    const itinerary = this.itinerary;
    const previousPortIndex = itinerary.ports.indexOf(this.previousPort);
    this.currentPort = itinerary.ports[previousPortIndex + 1];
+};
+
+function Port(name) {
+    this.name = name;
+    this.ships = [];
+};
+
+Port.prototype.addShip = function(ship) {
+    return this.ships.push(ship);
+};
+
+Port.prototype.removeShip = function(shipToRemove) {
+    //const newShipArray = this.ships.filter(function (ship) { 
+        //return ship !== shipToRemove;
+    //});
+    //return newShipArray;
+    const shipIndex = this.ships.indexOf(shipToRemove);
+    return this.ships.splice(shipIndex, 1);
 };
 
 function Itinerary(ports) {
