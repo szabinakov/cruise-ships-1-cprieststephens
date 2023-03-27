@@ -1,6 +1,6 @@
 # Cruise Ships
 
-I built this programme using JavaScript as a project for Command Shift bootcamp. I wrote the unit tests using Jest.
+I completed this guided project using JavaScript as a part of Command Shift bootcamp. I wrote the unit tests using Jest.
 
 Features:
 - Users can create a cruise ship and set the starting port.
