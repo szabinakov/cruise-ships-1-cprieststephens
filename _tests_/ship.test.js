@@ -40,7 +40,7 @@ describe("Ship", () => {
       ship.setSail();
       ship.dock();
       expect(ship.currentPort).toBe(liverpool);
-      expect(liverpool.ships).toContain(ship);//    
+      expect(liverpool.ships).toContain(ship);   
     });
   });
 });

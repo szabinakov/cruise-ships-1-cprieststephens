@@ -8,8 +8,8 @@ describe("Port", () => {
 
     beforeEach(() => {
       port = new Port("London");
-      MaryRose = {};
-      Britannia = {};
+      MaryRose = jest.fn();
+      Britannia = jest.fn();
     });
 
     it("instantiates Port object", () => {
