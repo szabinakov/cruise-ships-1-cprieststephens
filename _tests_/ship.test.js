@@ -8,8 +8,8 @@ describe("Ship", () => {
     let ship;
 
     beforeEach(() => {
-      london = new Port("London");
-      liverpool = new Port("Liverpool");
+      london = { name: "London", ships: [], addShip: jest.fn(), removeShip: jest.fn() };
+      liverpool = { name: "Liverpool", ships: [], addShip: jest.fn(), removeShip: jest.fn() };
       itinerary = new Itinerary([london, liverpool]);
       ship = new Ship(itinerary);
     });
@@ -27,20 +27,20 @@ describe("Ship", () => {
     });
 
     it("gets added to port on instantiation", () => {
-      expect(london.ships).toContain(ship);
+      expect(london.addShip).toHaveBeenCalledWith(ship);
     }); 
 
     it("can set sail", () => {
       ship.setSail();
       expect(ship.currentPort).toBeFalsy();
-      expect(london.ships).not.toContain(ship);
+      expect(london.removeShip).toHaveBeenCalledWith(ship);
     });
 
     it("can dock at different port", () => {
       ship.setSail();
       ship.dock();
       expect(ship.currentPort).toBe(liverpool);
-      expect(liverpool.ships).toContain(ship);   
+      expect(liverpool.addShip).toHaveBeenCalledWith(ship);
     });
   });
 });

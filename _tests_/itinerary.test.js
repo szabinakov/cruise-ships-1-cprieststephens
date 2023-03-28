@@ -1,4 +1,4 @@
-const {Port, Itinerary} = require('../src/ship.js');
+const { Itinerary } = require('../src/ship.js');
 
 describe("Itinerary", () => {
   it("instantiates Itinerary object", () => {
