@@ -1,4 +1,4 @@
-const {Ship, Port, Itinerary} = require('../src/ship.js');
+const { Ship } = require('../src/ship.js');
 
 describe("Ship", () => {
   describe("with ports and itinerary", () => {
@@ -10,7 +10,7 @@ describe("Ship", () => {
     beforeEach(() => {
       london = { name: "London", ships: [], addShip: jest.fn(), removeShip: jest.fn() };
       liverpool = { name: "Liverpool", ships: [], addShip: jest.fn(), removeShip: jest.fn() };
-      itinerary = new Itinerary([london, liverpool]);
+      itinerary = { ports: [london, liverpool] };
       ship = new Ship(itinerary);
     });
 
@@ -47,9 +47,9 @@ describe("Ship", () => {
 
 describe("setSail", () => {
   it("can't sail further than its itinerary", () => {
-    const london = new Port("London");
-    const liverpool = new Port("Liverpool");
-    const itinerary = new Itinerary([london, liverpool]);
+    const london = { name: "London", ships: [], addShip: jest.fn(), removeShip: jest.fn() };
+    const liverpool = { name: "Liverpool", ships: [], addShip: jest.fn(), removeShip: jest.fn() };
+    const itinerary = { ports: [london, liverpool] };
     const ship = new Ship(itinerary);
     ship.setSail();
     ship.dock();
